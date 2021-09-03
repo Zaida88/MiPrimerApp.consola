@@ -1,0 +1,48 @@
+﻿@model IEnumerable<ModuloNotificaciones.Entities.Usuario>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Lista De Usuarios</h1>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.UsuarioId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Correo)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.UsuarioId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Correo)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.UsuarioId">Editar</a> |
+                <a asp-action="Details" asp-route-id="@item.UsuarioId">Detalles</a> |
+                <a asp-action="Delete" asp-route-id="@item.UsuarioId">Borrar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+<a class="btn btn-primary" asp-action="Create">
+    Registrar Usuario
+</a>

@@ -2,35 +2,14 @@
 
 namespace Arbol3
 {
-    internal class manejadorArbol
+    class ManejadorArbol
     {
-        internal static int ContarHojas(Nodo nodo)
+        public string ImprimirArbol(Nodo nodo)
         {
-            int acumulador = 0;
-            foreach (Nodo actual in nodo.Hijos)
-            {
-                acumulador += actual.Valor.Length + actual.Hijos.Count;
-            }
-            return acumulador;
-        }
-        internal static int ContarNodos(Nodo nodo)
-        {
-            int acumulador = 0;
-            acumulador += nodo.nodoRaiz + nodo.Hijos.Count;
-            foreach (Nodo actual in nodo.Hijos)
-            {
-                acumulador += actual.Hijos.Count;
-            }
-            return acumulador;
-        }
-        internal static int ContarNiveles(Nodo nodo)
-        {
-            int acumulador = 0;
-            foreach (Nodo actual in nodo.Hijos)
-            {
-                acumulador += actual.Valor.Length;
-            }
-            return acumulador;
+            if (!nodo.Hijos.Any())
+                return nodo.Valor;
+
+            return ImprimirArbol(nodo.Hijos[0]) + ImprimirArbol(nodo.Hijos[1]) + ImprimirArbol(nodo.Hijos[2]);
         }
     }
 }

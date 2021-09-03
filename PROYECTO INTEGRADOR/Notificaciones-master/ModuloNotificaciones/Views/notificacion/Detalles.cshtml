@@ -1,0 +1,50 @@
+﻿@model ModuloNotificaciones.Entities.Producto
+
+<div>
+    <h4>Notificacion</h4>
+    <hr />
+    <p>Se enviara una notificacion con los siguientes detalles</p>
+    <dl class="row">
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.Nombre) Del Producto
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.Nombre)
+        </dd>
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.Precio)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.Precio)
+        </dd>
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.FechaRegistro)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.FechaRegistro)
+        </dd>
+
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.Usuario)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.Usuario.UsuarioId)
+        </dd>
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.Usuario.Nombre)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.Usuario.Nombre)
+        </dd>
+        <dt class="col-sm-3">
+            @Html.DisplayNameFor(model => model.Usuario.Correo)
+        </dt>
+        <dd class="col-sm-9">
+            @Html.DisplayFor(model => model.Usuario.Correo)
+        </dd>
+    </dl>
+</div>
+<div>
+    <button class="btn btn-primary" type="submit">Enviar Notificacion</button>
+    <a href="https://localhost:44369/Productos" class="btn btn-danger">Cancelar</a>
+</div>
